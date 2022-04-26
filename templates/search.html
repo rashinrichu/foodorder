@@ -1,0 +1,28 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>FOOD WORLD</title>
+    <link href="{% static 'https://fonts.googleapis.com/css?family=Open+Sans:400' %}" rel="stylesheet" />
+	<link href="{% static 'css/templatemo-style.css' %}" rel="stylesheet" />
+    {% for i in pr %}
+							<a class="imagover" href="{{i.get_url}}"> <img src="{{i.img.url}}" alt="Image" class="img-fluid tm-gallery-img" style="height:250px;width:250px;" ></a>
+							<figcaption>
+								<h4 class="tm-gallery-title">{{i.name}}</h4>
+								<p class="tm-gallery-description">{{i.desc|truncatechars:50}}</p>
+								<p class="tm-gallery-price">RS.{{i.price}}</p>
+								<p>Stock left:{{i.stock}}</p>
+							</figcaption>
+
+						</figure>
+				</div>
+						{% endfor %}
+
+
+</head>
+
+</html>

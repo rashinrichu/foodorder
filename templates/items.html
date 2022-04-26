@@ -1,0 +1,61 @@
+{% load static %}
+{% block body %}
+
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form class="example" action="{% url 'search' %}" method="get">
+</form>
+
+
+<!--<img src="{% static 'img/gallery/07.jpg' %}" alt="Image" class="img-fluid tm-gallery-img" />-->
+<!--							<figcaption><h4 class="tm-gallery-title">Sed ultricies dui</h4><p class="tm-gallery-description">Nam in suscipit nisi, sit amet consectetur metus. Ut sit amet tellus accumsan</p>-->
+<!--								<p class="tm-gallery-price">$94</p>-->
+<!--							</figcaption>-->
+<!--						</figure>-->
+<!--					</article>-->
+<!--					<article class="col-lg-3 col-md-4 col-sm-6 col-12 tm-gallery-item">-->
+<!--						<figure>-->
+<!--							<img src="{% static 'img/gallery/08.jpg' %}" alt="Image" class="img-fluid tm-gallery-img" />-->
+<!--							<figcaption>-->
+<!--								<h4 class="tm-gallery-title">Donec porta consequat</h4>-->
+<!--								<p class="tm-gallery-description">Nam in suscipit nisi, sit amet consectetur metus. Ut sit amet tellus accumsan</p>-->
+<!--								<p class="tm-gallery-price">$15</p>-->
+							</figcaption>
+						</figure>
+					</article>
+				</div> <!-- gallery page 1 -->
+
+				<!-- gallery page 2 -->
+      <div id="tm-gallery-page-salad" class="tm-gallery-page hidden">
+					<article class="col-lg-3 col-md-4 col-sm-6 col-12 tm-gallery-item">
+					</article>
+							<img src="{{pr.img.url}}"alt="Image" class="img-fluid tm-gallery-img">
+							<figcaption>
+								<h4 class="tm-gallery-title">{{pr.name}}</h4>
+								<p>RS.{{pr.price}}</p><br>
+								<p>{{pr.desc}}</p>
+								<p>STOCK:{{pr.stock}}</p>
+								{% if pr.stock <= 0 %}
+								<h1 style="color:red">Sorry No stock left</h1>
+								{% else %}
+								<button style="background-color: green;" type="button">
+								<a href="{% url 'addcart' pr.id %}" class="tm-btn">ADD TO CART</a>
+
+
+								{% endif %}
+
+</but
+
+
+
+								</button>
+							</figcaption>
+						</figure>
+
+ </body>
+{% endblock %}
+</html>

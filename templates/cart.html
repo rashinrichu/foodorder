@@ -1,0 +1,92 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Antique Bakery Cafe HTML Template by Tooplate</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;600&family=Oswald:wght@600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'css/all.min.css' %}"> <!-- fontawesome -->
+    <!-- <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet"> -->
+    <link rel="stylesheet" href="{% static 'css/tailwind.css' %}">
+    <link rel="stylesheet" href="{% static 'css/tooplate-antique-cafe.css' %}">
+
+<!--
+
+Tooplate 2126 Antique Cafe
+
+https://www.tooplate.com/view/2126-antique-cafe
+
+-->
+</head>
+<body>
+    <!-- Intro -->
+<center>
+    <a href="/"><h3 class="text-lg sm:text-xl mb-2 sm:mb-3 tm-text-yellow">Home</h3></a></center>
+                <h2 class="bg-white tm-text-brown py-6 px-12 text-4xl font-medium inline-block rounded-md">FOOD CART</h2>
+            </div>
+    {% for i in ci %}
+
+            <div class="flex flex-col lg:flex-row justify-around items-center">
+                <div class="flex-1 m-5 rounded-xl px-4 py-6 sm:px-8 sm:py-10 tm-bg-brown tm-item-container">
+                    <h3 class="text-lg sm:text-xl mb-3 sm:mb-2 tm-text-yellow"><a href="{% url 'remove' i.prodt.id %}"><b><u>Delete</u></b></a><a href="{{i.prodt.get_url}}"></a></h3>
+
+
+
+                        <img src="{{i.prodt.img.url}}" alt="Image"  class="rounded-md" style="width:350px; height:350px;">
+
+
+                            <div class="flex items-start mb-6 tm-menu-item">
+
+                            <h3 class="text-lg sm:text-xl mb-2 sm:mb-3 tm-text-yellow"></h3>
+
+                              <h3>{{i.prodt.name}}</h3><span class="price"><br><a href="{% url 'addcart' i.prodt.id %}"><nav><b>+</b></nav></a><br><a href="{% url 'cart_decrement' i.prodt.id %}"><b>--</b></a><br><br>Qty::{{i.quan}}<br></span><br>
+                                <br>
+                                <br>
+                                <br>
+
+                              <div class="ml-3 sm:ml-6">
+                                <h4>RS:{{i.prodt.price}}</h4>
+                                  <p>Total:{{i.total}}</p>
+
+
+                            <div class="text-white text-md sm:text-lg font-light mb-1">
+                                <div class="text-white text-md sm:text-lg font-light">
+                        </div>
+                    </div>
+                        </div>
+<!--                    <div class="flex items-start mb-6 tm-menu-item">-->
+<!--                        <div class="ml-3 sm:ml-6">-->
+<!--                            <h3 class="text-lg sm:text-xl mb-2 sm:mb-3 tm-text-yellow"></h3>-->
+<!--                            <div class="text-white text-md sm:text-lg font-light mb-1"></div>-->
+<!--                            <div class="text-white text-md sm:text-lg font-light"></div>-->
+<!--                        </div>-->
+                    </div>
+{% endfor %}
+                    <p>Total:<span class="price" style="font-size:30px">{{t}}</span></p>
+
+<!--                    <div class="flex items-start mb-6 tm-menu-item">-->
+<!--&lt;!&ndash;                        <img src="{% static 'img/menu-item-3.jpg' %}" alt="Image" class="rounded-md">&ndash;&gt;-->
+<!--                        <div class="ml-3 sm:ml-6">-->
+<!--                &lt;!&ndash;                        <img src="{% static 'img/menu-item-2.jpg' %}" alt="Image" class="rounded-md">&ndash;&gt;-->
+<!--            <h3 class="text-lg sm:text-xl mb-2 sm:mb-3 tm-text-yellow">Hot Latte #FC6</h3>-->
+<!--                            <div class="text-white text-md sm:text-lg font-light mb-1">M $11.75</div>-->
+<!--                            <div class="text-white text-md sm:text-lg font-light">L $14.75</div>-->
+<!--                        </div>-->
+<!--                    </div>-->
+                    <div class="flex items-start mb-6 tm-menu-item">
+<!--                        <img src="{% static 'img/menu-item-4.jpg' %}" alt="Image" class="rounded-md">-->
+<!--                        <div class="ml-3 sm:ml-6">-->
+<!--                            <h3 class="text-lg sm:text-xl tm-text-yellow mb-1">Hot Espresso</h3>-->
+<!--                            <h3 class="text-lg sm:text-xl mb-2 sm:mb-3 tm-text-yellow">Hot Chocolate</h3>-->
+<!--                            <div class="text-white text-md sm:text-lg font-light">Size M $11.75 . L $14.75</div>-->
+<!--                        </div>-->
+                    </div>
+                </div>
+
+    </div>
+</body>
+</html>
